@@ -1,7 +1,7 @@
 :root{
     --primary: #f0f8ff;
     --secondary: #000;
-    --tertiary: rgb(234, 71, 42);
+    --tertiary: #ffeb53;
     --gray: #222;
     --darkgray: #111;
     --accent: #13cfa9;
@@ -22,8 +22,13 @@ img{
     width: 100%;
     height: auto;
 }
+a{
+    color: unset;
+    text-decoration: unset;
+}
 
 .top-wrapper{
+    visibility: visible;
     z-index: 999;
     position:fixed;
     top:0;
@@ -32,8 +37,8 @@ img{
     width: 100%;
     grid-template-columns: 50% 50%;
     margin-bottom: 120px;
-    background-color: var(--darkgray);
     color: var(--primary);
+    background-color: var(--darkgray);
 }
 .top-element{
     height: auto;
@@ -45,14 +50,14 @@ img{
     display: flex;
     align-items: center;
     justify-content: left;
-    font-size: 2rem;
+    font-size: 1.6rem;
     padding-left: 35px;
-    font-family: Smooch, cursive;
     width: auto;
     white-space: nowrap;
 }
 
 .top-title h1{
+    font-weight: 200;
     margin: 0;
 }
 
@@ -61,19 +66,15 @@ img{
     align-items: center;
     flex-direction: row;
     justify-content: right;
-    font-size: 1.7rem;
+    font-size: 1.3rem;
     gap: 35px;
     padding-right: 35px;
     height: 100%;
     width: auto;
 }
 .top-nav a{
-    border-top: 1px solid var(--primary);
-    border-bottom: 1px solid var(--primary);
-
     cursor: pointer;
 }
-
 
 .hero-div{
     position:relative;
@@ -115,41 +116,46 @@ img{
     color: var(--primary);
 }
 
-.info-div{
-    font-family: Smooch Sans,sans-serif;
+.need-div{
+    font-family: Vollkorn SC, Georgia, 'Times New Roman', Times, serif;
     color: var(--primary);
-    position: absolute;
+    position: fixed;
     width: auto;
     height: auto;
     top: 27%;
-    padding: 15px;
+    padding: 0;
     text-align: center;
-    font-size: 18px;
+    font-size: 17px;
+    white-space: nowrap;
 }
 
-.info-div h1{
+.need-div h1{
     margin: 0;
     color: var(--primary);
-    font-weight: 300;
-    font-size: 8.2em;
-    font-family: Smooch;
+    padding: 15px;
+    font-size: 8.7em;
+    font-weight: 400;
+    color: var(--primary);
 }
-.info-div h2{
+.need-div h2{
     margin: 0;
     font-size: 2em;
     font-weight: 200;
 }
-.info-div button{
+.need-div button{
     margin: 0;
-    border: 1px inset var(--primary);
-    border-radius: 2px;
+    letter-spacing: .6em;
+    padding: 5px 5px;
+    border: 2px solid var(--primary);
+    border-radius: 7px;
     margin: 0;
-    background-color: unset;
-    font-size: 2em;
-    color:var(--primary);
-    font-weight: 100;
+    font-size: 1.7em;
+    font-weight: 200;
+    background-color: transparent;
+    color: var(--primary);
 }
-.info-div span{
+
+.need-div span{
     margin: 0;
     color: var(--accent);
     font-weight: 300;
@@ -157,6 +163,9 @@ img{
 }
 
 .scroll-through-gallery{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
     color: var(--primary);
     padding: 7px;
@@ -164,12 +173,26 @@ img{
     height: auto;
 }
 .scroll-through-gallery img{
+    opacity: 0;
     border-radius: 5px;
     margin-top: 15px;
     width: clamp(320px, 720px, 75%);
 }
 
-.info{
+.reveal{
+    animation: rev 1s forwards;
+}
+
+@keyframes rev{
+    50%{
+        width: clamp(320px, 820px, 85%);
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+.contact{
     color:var(--primary);
     text-align: center;
     font-family: Stylish, sans-serif;
@@ -179,7 +202,7 @@ img{
 
 .gallery{
     width: auto;
-    background-color: var(--darkgray);
+    background-image: linear-gradient(var(--darkgray), var(--gray), var(--darkgray));
 }
 
 @media screen and (max-width:820px)
@@ -198,35 +221,41 @@ img{
     .top-nav{
         padding: 0;
         justify-content: center;
-        border-top: 1px solid var(--primary);
     }
     .top-nav a{
         border:none;
+    }
+    .need-div{
+        font-size: 14px;
     }
 }
 
 @media screen and (max-width:600px)
 {
-    .info-div{
+    .section-title{
         font-size: 12px;
     }
     .top-title{
         font-size: 1.7rem;
     }
     .hero-gradient h1{
-
         font-size: 4rem;
-        
     }
     .hero-gradient span{
         font-size: 2rem;
     }
+    .need-div{
+        font-size: 11px;
+    }
 }
 
-@media screen and (max-width:450px)
+@media screen and (max-width:500px)
 {
-    .info-div{
+    .section-title{
         font-size: 11px;
+    }
+    .need-div{
+        font-size: 8px;
     }
     .hero-gradient h1{
         font-size: 3.5rem;

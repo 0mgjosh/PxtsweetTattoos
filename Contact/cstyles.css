@@ -1,0 +1,61 @@
+header{
+    text-align: center;
+    color: aliceblue;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+html{
+    background-color: black;
+    color: aliceblue;
+    font-size: 16px;
+    text-align: center;
+}
+#formdiv{
+    max-width: 700px;
+    width: 75vw;
+    height: auto;
+    display: flex;
+    margin: auto;
+    column-count: 1;
+    flex-direction: column;
+}
+.logo{
+    width: 20vw;
+    height: auto;
+}
+#formdiv form{
+    color: aliceblue;
+    width: 100%;
+    height: auto;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 2em;
+}
+input, textarea, select, option{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1em;
+    background-color: aliceblue;
+    border-radius: 15px;
+    border-style: none;
+}
+#subbutton {
+    text-align: center;
+    color: black;
+    background-color: aliceblue;
+    width: 25vw;
+    padding: 1.3vh;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 2em;
+    border-radius: 25px;
+    white-space: nowrap;
+    border: none;
+}
+#subbutton:hover{
+    animation: colorswitch 1s forwards;
+}
+
+@keyframes colorswitch {
+    to{
+        color: aliceblue;
+        background-color: #06a384;
+    }
+}

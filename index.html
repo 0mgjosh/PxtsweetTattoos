@@ -8,19 +8,25 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Smooch&family=Smooch+Sans:wght@100;200;300;400;500;600;700;800;900&family=Stylish&display=swap" rel="stylesheet"><script src="/brain.js"></script>
+    
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vollkorn+SC:wght@400;600;700;900&display=swap" rel="stylesheet">
     <title>PxtSweet</title>
 </head>
 <body>
     <section class="top-hat">
         <div class="top-wrapper">
             <div class="top-title top-element">
-                <h1> PxtSweet Tattoos</h1>
+                <h1>PxtSweet Tattoos</h1>
             </div>
             
             <div class="top-nav top-element">
-                <a>Home</a>
-                <a>Gallery</a>
-                <a>Contact</a>
+                <a onclick="scroll_to_top()">Home</a>
+                <a onclick="scroll_to_gallery()">Gallery</a>
+                <a onclick="scroll_to_info()">Contact</a>
+                <a onclick="scroll_to_info()">Info</a>
             </div>
         </div>
     </section>
@@ -28,14 +34,20 @@
     <section class="main">
 
         <div class="hero-div">
-            <div class="info-div">
-                <h1>Need Ink?</h1>
-                <h2>located: <span>Senioa, Ga</span></h2>
-                <button>→Request Booking←</button>
+            <div id="need-box" class="need-div">
+                <h1>Need ink?</h1>
+                <h2>location: 
+                    <span>
+                        <a target="_blank" href="https://www.google.com/maps/place/Cornerstone+Tattoo+Gallery/@33.3013606,-84.554466,19.04z/data=!3m1!5s0x88f494dcba855cad:0xc52e3dc0f597371e!4m12!1m6!3m5!1s0x88f494dcb96dd1db:0x29dd23eae1d2a8f8!2sCornerstone+Tattoo+Gallery!8m2!3d33.3013083!4d-84.5544194!3m4!1s0x88f494dcb96dd1db:0x29dd23eae1d2a8f8!8m2!3d33.3013083!4d-84.5544194">
+                            Senoia, Ga
+                        </a>
+                    </span>
+                </h2>
+                <button onclick="scroll_to_info()">→Request Booking←</button>
             </div>
             <div class="hero-gradient">
                 <div class="section-title">
-                    <h1>Gallery<span>scroll down↓</span></h1>
+                    <h1>Gallery<span class="hide-span">scroll down↓</span></h1>
                 </div>
             </div>
         </div>
@@ -44,19 +56,52 @@
 
     <section class="gallery">
         <div class="scroll-through-gallery">
-            <img src="/Gallery/Eye.jpeg">
-            <img src="/Gallery/Elephant.jpeg">
-            <img src="/Gallery/skull.jpeg">
-            <img src="/Gallery/Sword.jpeg">
-            <img src="/Gallery/Lady.jpg">
+            <img class="gal_img" src="/Gallery/Eye.jpeg">
+            <img class="gal_img" src="/Gallery/Elephant.jpeg">
+            <img class="gal_img" src="/Gallery/skull.jpeg">
+            <img class="gal_img" src="/Gallery/Sword.jpeg">
+            <img class="gal_img" src="/Gallery/Lady.jpg">
         </div>
     </section>
 
-    <section class="info">
+    <section class="contact">
         <div class="section-title">
             <h1>Contact<span> form ↓</span></h1>
         </div>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil est ut necessitatibus quo similique nam sunt minus dicta et explicabo?</p>
+        <form>
+            <label for="name">Full Name: </label>
+            <input name="name" type="text" placeholder="John Doe"> <br><br>
+
+            <label>How would you like to be contacted?</label>
+            <select>
+                <option>Phone</option>
+                <option>Email</option>
+            </select>
+            <br><br>
+
+            <div id="phone-box">
+                <label for="phone">Phone Number: </label>
+                <input name="phone" type="number" placeholder="123-123-1234"><br><br>
+            </div>
+
+            <div id="email-box">
+                <label for="email">Email: </label>
+                <input type="email" placeholder="example@email.com"> <br><br>
+            </div>
+
+            <label for="allergies">Allergies? </label>
+            <input name="allergies" type="checkbox"><br><br>
+
+            <div id="allergy-box">
+                <label for="allergy-message">Please list allergies: </label>
+                <textarea name="allergy-message" placeholder="apples and bananas"></textarea><br><br>
+            </div>
+
+            <label for="description">Describe the tattoo you want: </label>
+            <textarea name="description" placeholder="I want a tiger over-looking a..."></textarea>
+
+
+        </form>
     </section>
 
 
@@ -67,5 +112,6 @@
 <footer>
     <script src="/brain.js"></script>
     <script src="/ghost.js"> </script>
+    <script src="/revel.js"> </script>
 </footer>
 </html>
